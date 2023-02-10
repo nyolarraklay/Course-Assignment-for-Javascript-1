@@ -2,45 +2,53 @@ const container = document.querySelector(".container_content");
 
 const queryString = document.location.search;
 
-console.log(queryString)
-
 const params = new URLSearchParams(queryString);
 
 console.log(params)
 
-const author = params.get("author");
+const id = params.get("id");
+
+console.log(id)
 
 
-console.log(author)
 
-
-const key = "138f1bf38f524142a0567e16b9cf6819";
-const url = `https://newsapi.org/v2/everything?q=tesla&${author}&from=2023-01-08&sortBy=publishedAt&apiKey=${key}`;
+const key = "10160084970342798";
+const url = `https://www.superheroapi.com/api.php/${key}/${id}`;
 
 async function getData (){
   
   const response = await fetch (url);
   const json = await response.json();
-
-console.log(json);
  
-const data = json.articles
-
-console.log(data.title)
+console.log(json)
 
 
-  createHtml(data);
+const dataImage = json.image;
+const dataDescription = json.appearance;
+const dataBiography =json.biography;
 
-  function createHtml() {
-    container.innerHTML += `<div class="cards"> <h3>${data.name}</h3> <p>${data.description}</p><h5>${author}</h5> </div>`;
-  
-  }
 
-}
+
+  createHtml(json);
 
 
 
 
+  function createHtml(json) {
 
 
-getData ()
+    container.innerHTML += `<h1>${json.name}</h1> <div class="content-container">
+    <img class="image" 
+        src="${dataImage.url}";</div>
+    <div class="description">
+    <p>Gender: ${dataDescription.gender}</p>
+    <p>Race: ${dataDescription.race}</p>
+    <p>Aliases: ${dataBiography.aliases}</p>
+    <p>Publisher: ${dataBiography.publisher}</p>
+    </div>
+    
+    </div>`
+
+  }}
+
+  getData ()
