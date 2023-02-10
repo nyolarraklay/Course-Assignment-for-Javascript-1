@@ -68,20 +68,55 @@ label {
 }
 
 .cards {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  text-decoration: none;
   margin: 1rem;
   padding: 1rem;
   max-width: 200px;
   background: white;
   border: 1px solid grey;
   border-radius: 1rem;
+
 }
 
-.cards img {
-  width: 100%;
+
+a:hover {
+  background-color: var(--grey);
+  color: white;
+}
+
+
+
+.image {
+  margin-bottom: 1em;
+  height: 75vh;
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
 }
 
 p {
   font-size: 0.9rem;
+  margin: 0;
 }
 
+.content-container{
+  display: grid;
+}
+
+h1{
+  font-size: 2rem;
+  color: black;
+}
+
+h2{
+  font-size: 1.5rem;
+  color: red;
+}
+
+footer{
+  margin-top: 1em;
+}
 
