@@ -181,7 +181,8 @@ p span{
   margin-top: 0.5em;
 }
 /*details.page*/
-.breadcrumbs a {
+
+.content-container a, .breadcrumbs a{
   margin-bottom: 1em;
   padding-bottom: 1em;
   border-bottom: 1px solid lightgrey;

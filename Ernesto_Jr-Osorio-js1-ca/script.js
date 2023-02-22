@@ -34,5 +34,3 @@ async function getFood (){
 
 getFood ();
 
-
-
