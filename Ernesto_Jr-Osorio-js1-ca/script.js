@@ -12,14 +12,11 @@ async function getFood (){
   try {
     const response = await fetch (url);
     const json = await response.json();
-
-    console.log(json);
-
+    
     recipesContainer.innerHTML = "";
 
     const search = json.menuItems;
-    
-    console.log(search)
+
 
     search.forEach(function(chickens) {
       recipesContainer.innerHTML += `<a href="detailsRecipe.html?id=${chickens.id}" class="cards"><h2>${chickens.title}</h2><img src="${chickens.image}"/><h5>Restaurant Chain: ${chickens.restaurantChain}</h5></a>`;

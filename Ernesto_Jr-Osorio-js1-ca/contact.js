@@ -8,10 +8,10 @@ const email = document.querySelector("#email");
 const emailError = document.querySelector("#emailError");
 const address = document.querySelector("#address");
 const addressError = document.querySelector("#addressError");
-const characterCount =document.querySelector(".character-count span")
+const characterCount =document.querySelector(".character-count span");
+const button = document.querySelector("button");
 
 address.onkeyup = function () {
-  console.log(event.target.value.length);
   const length = event.target.value.length;
   characterCount.innerHTML = length;
 }
@@ -90,5 +90,4 @@ function validateEmail(email) {
   const patternMatches = regEx.test(email);
   return patternMatches
 }
-
 
